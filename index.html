@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manish Barui - Computer Student & Web Developer | Portfolio</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="https://github.com/manishbarui/imagecontainer/raw/refs/heads/main/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta name="google-site-verification" content="" />
+  
+  <!-- SEO Meta Tags --> 
+  <meta name="description" content="Manish Barui - Computer Application Student & Web Developer from West Bengal, India. Skilled in HTML, CSS, Python, and passionate about technology and innovation.">
+  <meta name="keywords" content="Manish Barui, Web Developer, Programming Python, HTML, CSS, JavaScript Computer Application, West Bengal, Portfolio, Technology Enthusiast">
+  <meta name="author" content="Manish Barui">
+  <meta name="robots" content="index, follow"> 
+  
+  <!-- Open Graph(OG Tags) / Meta, LinkedIn-->  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://manish-barui.vercel.app/">
+  <meta property="og:title" content="Manish Barui - Computer Application Student & Web Developer">
+  <meta property="og:description" content="Passionate about technology, web development, and continuous learning. View my portfolio and connect with me.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/manishbarui/imagecontainer/refs/heads/main/Manish_Barui.jpg"> 
+  <!-- Canonical URL --> 
+  <link rel="canonical" href="https://manish-barui.vercel.app/"> 
+  
+  <!-- Preconnect to external domains for better performance -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  
+   <!-- Defer JavaScript for better performance -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Manish Barui",
+    "url": "https://manish-barui.vercel.app/",
+    "image": "https://raw.githubusercontent.com/manishbarui/imagecontainer/refs/heads/main/Manish_Barui.jpg",
+    "jobTitle": "Computer Application Student & Web Developer",
+    "description": "Computer Application student and web developer based in Jalpaiguri, West Bengal, India. Skilled in HTML, CSS, Python. Passionate about technology and continuous learning.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": " Hakimpara", 
+      "addressLocality": "Jalpaiguri",
+      "addressRegion": "West Bengal", 
+      "postalCode": "735101", 
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://github.com/manishbarui",
+      "https://x.com/manish_barui",
+      "https://www.instagram.com/manish_barui", 
+      "https://www.facebook.com/manish.barui01"
+    ]
+  } 
+  </script>
+  
+  <style> 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f1f5f9;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.light {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #0f172a;
+    }
+    
+    /* Custom override for bg-slate-800 */
+    body .bg-slate-800 { 
+      background-color: #1e293b !important; 
+    }
+
+    body.light .bg-slate-800 { 
+      background-color: #fafafa !important; 
+    } 
+    
+    .nav-link {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #60a5fa;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .hero-content {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .section {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    .skill-bar {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(100, 116, 139, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    body.light .skill-bar {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border-color: #60a5fa;
+    }
+    
+    .contact-input {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid #334155;
+      transition: all 0.3s ease;
+      color: #f1f5f9;
+    }
+
+    body.light .contact-input {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+    
+    .contact-input:focus {
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+    }
+    
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px);
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .timeline {
+      border-left: 2px solid #3b82f6;
+      padding-left: 2rem;
+      margin-left: 1rem;
+    }
+    
+    .timeline-item {
+      margin-bottom: 1rem;
+      position: relative;
+      padding: 1.5rem;
+      background: rgba(30, 41, 59, 0.7);
+      border-radius: 8px;
+      border: 1px solid rgba(100, 116, 139, 0.3);
+    }
+    
+    .timeline-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    body.light .timeline-item {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    } 
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.7rem;
+      top: 1.5rem;
+      width: 20px;
+      height: 20px;
+      background: #3b82f6;
+      border-radius: 50%;
+    }
+    
+    .smaller-word {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    body.light .smaller-word {
+      color: #475569;
+    }
+    
+    /* Progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: #3b82f6;
+      z-index: 100;
+      transition: width 0.3s ease;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 40;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    }
+    
+    /* Loading spinner */
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 3px solid white;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Form message styles */
+    .form-message {
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .form-message.success {
+      background: #10b981;
+      color: white;
+    }
+    
+    .form-message.error {
+      background: #ef4444;
+      color: white;
+    }
+    
+    /* Honeypot field (hidden) */
+    .honeypot {
+      position: absolute;
+      left: -9999px;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+      }
+      
+      .timeline-item::before {
+        display: none;
+      }
+    
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    } 
+
+    body.light nav {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    body.light #about {
+      background: rgba(241, 245, 249, 0.3);
+    }
+
+    body.light #experience {
+      background: rgba(241, 245, 249, 0.3);
+    }
+
+    body.light #contact {
+      background: rgba(241, 245, 249, 0.3);
+    }
+
+    body.light .bg-slate-800 {
+      background: #f1f5f9;
+    }
+
+    body.light .text-slate-200 {
+      color: #0f172a;
+    }
+
+    body.light .text-slate-300 {
+      color: #334155;
+    }
+
+    body.light .text-slate-400 {
+      color: #475569;
+    }
+
+    body.light .text-slate-500 {
+      color: #64748b;
+    }
+
+    body.light .text-slate-600 {
+      color: #475569;
+    }
+
+    body.light footer {
+      background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    body.light .border-slate-800 {
+      border-color: #e2e8f0;
+    }   
+
+    #mobile-menu {   
+      visibility: hidden;  /* Hide the menu initially */
+      transform: scaleY(0.95); /* A slight scale down */
+      transform-origin: top; 
+      transition: transform 0.3s ease-in, visibility 0s 0.3s, opacity 0.3s ease-in; /* Delay visibility change */
+      opacity: 0;
+  
+  /* Original background and layout properties */
+      display: flex;  /* Keep display: flex in the initial state */
+      flex-direction: column; 
+      gap: 0.5rem; 
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(30, 41, 59, 0.95); /* Dark mode background */
+      padding: 1rem;
+      border-radius: 0 0 8px 8px;
+      z-index: 50;
+    } 
+
+    #mobile-menu.active {
+      visibility: visible;  /* Show the menu when active */
+      transform: scaleY(1);
+      transition: transform 0.3s ease-out, visibility 0s, opacity 0.3s ease-out; 
+      opacity: 1;
+    }
+
+    body.light #mobile-menu {
+      background: rgba(241, 245, 249, 0.95); /* Light mode background */
+    }
+
+    #hamburger, #theme-toggle {
+      transition: transform 0.3s ease;
+    }
+
+    #hamburger.active {
+      transform: rotate(90deg);
+    }
+
+    #theme-toggle.active {
+      transform: scale(1.2);
+    }
+  </style> 
+</head>
+<body class="">
+    <!-- Progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- Navigation --> 
+  <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-sm py-4 px-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold text-blue-400">Manish<span class="text-white">.dev</span></div>
+      <div class="hidden md:flex space-x-8">
+        <button class="nav-link text-slate-200" onclick="scrollToSection('home')" aria-label="Navigate to Home section">Home</button>
+        <button class="nav-link text-slate-200" onclick="scrollToSection('about')" aria-label="Navigate to About section">About</button>
+        <button class="nav-link text-slate-200" onclick="scrollToSection('skills')" aria-label="Navigate to Skills section">Skills</button>
+        <button class="nav-link text-slate-200" onclick="scrollToSection('experience')" aria-label="Navigate to Experience section">Experience</button>
+        <button class="nav-link text-slate-200" onclick="scrollToSection('education')" aria-label="Navigate to Education section">Education</button>
+        <button class="nav-link text-slate-200" onclick="scrollToSection('contact')" aria-label="Navigate to Contact section">Contact</button>
+      </div>
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="text-slate-200 text-2xl" aria-label="Toggle dark mode">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button id="hamburger" class="md:hidden text-slate-200" aria-label="Open navigation menu">
+          <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div> 
+    <div id="mobile-menu" class="md:hidden">
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('home'); closeMobileMenu();" aria-label="Navigate to Home section">Home</button>
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('about'); closeMobileMenu();" aria-label="Navigate to About section">About</button>
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('skills'); closeMobileMenu();" aria-label="Navigate to Skills section">Skills</button>
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('experience'); closeMobileMenu();" aria-label="Navigate to Experience section">Experience</button>
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('education'); closeMobileMenu();" aria-label="Navigate to Education section">Education</button>
+      <button class="nav-link text-slate-200 text-left" onclick="scrollToSection('contact'); closeMobileMenu();" aria-label="Navigate to Contact section">Contact</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center pt-5">
+    <div class="max-w-7xl mx-auto px-6 py-3 grid md:grid-cols-2 gap-8 items-center">
+      <div class="hero-content">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4">Hi, I'm <span class="text-blue-400">Manish Barui</span></h1>
+        <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">Computer Application Student & Technology Enthusiast</h2>
+        <p class="text-slate-400 mb-8 max-w-lg">Passionate about technology, science, and political discourse. Continuously expanding knowledge in web development and programming.</p>
+        <div class="flex space-x-4">
+          <button class="btn-primary px-8 py-3 rounded-full font-medium" onclick="scrollToSection('skills')">View Skills</button>
+          <button class="px-8 py-3 rounded-full font-medium border border-blue-400 text-blue-400 hover:bg-blue-400/10 transition" onclick="scrollToSection('contact')">Contact Me</button>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden floating">
+            <img src="https://raw.githubusercontent.com/manishbarui/imagecontainer/refs/heads/main/Manish_Barui_Profile.jpg" alt="Manish Barui" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-500/20 rounded-full"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-blue-500/20 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-3 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10 section"> 
+        <h2 class="text-4xl font-bold mb-4">About <span class="text-blue-400">Me</span></h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="section">
+          <h3 class="text-2xl font-bold mb-4">My Journey</h3>
+          <p class="text-slate-300 mb-4">Based in West Bengal, India, I'm a dedicated Computer Application student passionate about technology, science, and political discourse.</p>
+          <p class="text-slate-300 mb-6">With a strong drive for self-development, I continuously seek opportunities to expand my knowledge in web development, programming, and current affairs.</p>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center">
+              <div class="mr-3 text-blue-400">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Location</h4>
+                <p class="text-slate-400">West Bengal, India</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="mr-3 text-blue-400">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Interests</h4>
+                <p class="text-slate-400">Tech, Science, Politics</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="mr-3 text-blue-400">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Focus</h4>
+                <p class="text-slate-400">Web Development</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="mr-3 text-blue-400">
+                <i class="fas fa-book"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Studies</h4>
+                <p class="text-slate-400">Computer Application</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4 section">
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <div class="text-blue-400 text-4xl mb-4">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Web Development</h4>
+            <p class="text-slate-400">Creating responsive websites with HTML/CSS</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <div class="text-blue-400 text-4xl mb-4">
+              <i class="fas fa-terminal"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Programming</h4>
+            <p class="text-slate-400">Building solutions with Python</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <div class="text-blue-400 text-4xl mb-4">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Academic Pursuits</h4>
+            <p class="text-slate-400">Political Science & Computer Science</p>
+          </div>
+          <div class="bg-slate-800 p-6 rounded-xl">
+            <div class="text-blue-400 text-4xl mb-4">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h4 class="font-bold text-lg mb-2">Innovation</h4>
+            <p class="text-slate-400">Exploring biological innovations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8 section">
+        <h2 class="text-4xl font-bold mb-4">Technical <span class="text-blue-400">Proficiencies</span></h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="skill-card bg-slate-800 p-8 rounded-xl text-center section">
+          <div class="text-blue-400 text-5xl mb-6">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+          <p class="text-slate-400">HTML5, CSS3</p>
+        </div>
+        
+        <div class="skill-card bg-slate-800 p-8 rounded-xl text-center section">
+          <div class="text-blue-400 text-5xl mb-6">
+            <i class="fas fa-terminal"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Programming</h3>
+          <p class="text-slate-400">Python</p>
+        </div>
+        
+        <div class="skill-card bg-slate-800 p-8 rounded-xl text-center section">
+          <div class="text-blue-400 text-5xl mb-6">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Academic Pursuits</h3>
+          <p class="text-slate-400">Political Science, Computer Sciences</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-10 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-8 section">
+        <h2 class="text-4xl font-bold mb-4">Field <span class="text-blue-400">Journey</span></h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="timeline">
+          <div class="timeline-item section">
+            <h3 class="text-xl font-bold mb-2">Academic Projects</h3>
+            <span class="smaller-word">Ongoing</span>
+            <p class="text-slate-300 mt-2">Developed multiple web-based projects using HTML/CSS and Python implementations</p>
+          </div>
+          
+          <div class="timeline-item section">
+            <h3 class="text-xl font-bold mb-2">Skill Development</h3>
+            <span class="smaller-word">Continuous</span>
+            <p class="text-slate-300 mt-2">Consistently enhancing technical capabilities through personal projects and self-study</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-5 section"> 
+        <h2 class="text-4xl font-bold mb-4">Academic <span class="text-blue-400">Credentials</span></h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="timeline">
+          <div class="timeline-item section">
+            <h3 class="text-xl font-bold mb-2">Diploma in Computer Application (ADCA)</h3>
+            <p class="text-slate-300">Currently Student</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section --> 
+  <section id="contact" class="py-10 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-10 section">
+        <h2 class="text-4xl font-bold mb-4">Connect <span class="text-blue-400">With Me</span></h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div class="section">
+          <form id="contactForm" action="https://formspree.io/f/xrbqbyng" method="POST" class="space-y-6">
+              <!-- Honeypot field for spam protection -->
+              <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off"> 
+            
+            <div>
+              <label for="name" class="block text-slate-300 mb-2">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-slate-300 mb-2">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none">
+            </div>
+            
+            <div>
+              <label for="message" class="block text-slate-300 mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your Message" required class="contact-input w-full px-4 py-3 rounded-lg focus:outline-none"></textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn" class="btn-primary w-full py-3 rounded-lg font-medium">
+              <span id="btnText">Send Message</span> 
+            </button>
+            
+            <div id="formMessage" class="form-message"></div> 
+          </form>
+        </div>
+        
+        <div class="section">
+          <div class="text-center mb-10">
+            <h3 class="text-2xl font-bold mb-6">Social Links</h3>
+            <div class="flex justify-center space-x-8">
+              <button class="social-icon text-4xl text-slate-300 hover:text-pink-500" onclick="window.open('https://www.instagram.com/manish_barui', '_blank')">
+                <i class="fab fa-instagram"></i>
+              </button>
+              <button class="social-icon text-4xl text-slate-300 hover:text-blue-500" onclick="window.open('https://www.facebook.com/manish.barui01', '_blank')">
+                <i class="fab fa-facebook"></i>
+              </button>
+              <button class="social-icon text-4xl text-slate-300 hover:text-blue-400" onclick="window.open('https://x.com/manish_barui', '_blank')">
+                <i class="fab fa-twitter"></i>
+              </button>
+              <button class="social-icon text-4xl text-slate-300 hover:text-gray-400" onclick="window.open('https://github.com/manishbarui', '_blank')">
+                <i class="fab fa-github"></i>
+              </button>
+            </div>
+          </div>
+          
+          <div class="bg-slate-800 p-8 rounded-xl">
+            <h3 class="text-2xl font-bold mb-6 text-center">Get In Touch</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="text-blue-400 text-xl mr-4">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <p class="text-slate-300">Email me directly</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="text-blue-400 text-xl mr-4">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <p class="text-slate-300">West Bengal, India</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="text-blue-400 text-xl mr-4">
+                  <i class="fas fa-user-graduate"></i>
+                </div>
+                <div>
+                  <p class="text-slate-300">Computer Application Student</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-slate-900 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <div class="text-2xl font-bold text-blue-400 mb-4">Manish<span class="text-white">Barui</span></div> 
+      
+      <div class="flex justify-center space-x-6 mb-8">
+        <button class="social-icon text-xl text-slate-500 hover:text-pink-500" onclick="window.open('https://www.instagram.com/manish_barui', '_blank')">
+          <i class="fab fa-instagram"></i>
+        </button>
+        <button class="social-icon text-xl text-slate-500 hover:text-blue-500" onclick="window.open('https://www.facebook.com/manish.barui01', '_blank')">
+          <i class="fab fa-facebook"></i>
+        </button>
+        <button class="social-icon text-xl text-slate-500 hover:text-blue-400" onclick="window.open('https://x.com/manish_barui', '_blank')">
+          <i class="fab fa-twitter"></i>
+        </button>
+        <button class="social-icon text-xl text-slate-500 hover:text-gray-400" onclick="window.open('https://github.com/manishbarui', '_blank')">
+          <i class="fab fa-github"></i>
+        </button>
+      </div>
+      
+      <div class="text-slate-600 text-sm">
+        &copy; 2025 Manish Barui. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<script>
+  // Initialize animations when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize GSAP animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animate hero content
+    gsap.to('.hero-content', {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power3.out'
+    });
+    
+    // Animate sections on scroll
+    gsap.utils.toArray('.section').forEach(section => {
+      gsap.fromTo(section, 
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+    
+    // Animate skill cards
+    gsap.utils.toArray('.skill-card').forEach((card, i) => {
+      gsap.fromTo(card, 
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Theme toggle with animation
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      themeToggle.classList.toggle('active');
+      setTimeout(() => themeToggle.classList.remove('active'), 300); // Reset animation
+      if (body.classList.contains('light')) {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+      } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.setAttribute('aria-label', 'Toggle light mode');
+      }
+    });
+
+    // Hamburger menu with animation
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      setTimeout(() => hamburger.classList.remove('active'), 300); // Reset animation
+    });
+  });
+  
+  // Progress bar
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = scrollPercentage + '%';
+    });
+    
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Form handling with loading state
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const formMessage = document.getElementById('formMessage');
+    // let lastSubmitTime = 0;
+    const RATE_LIMIT = 30 * 60 * 1000; // 30 minutes
+    const STORAGE_KEY = "lastSubmitTime";
+
+    contactForm.addEventListener('submit', async (e) => {
+     e.preventDefault(); 
+
+    const currentTime = Date.now();
+    const lastSubmitTime = parseInt(localStorage.getItem(STORAGE_KEY), 10);
+
+    // Rate limiting check
+    if (!isNaN(lastSubmitTime) && (currentTime - lastSubmitTime) < RATE_LIMIT) {
+      showMessage('Please wait before sending another message.', 'error');
+      return;
+    }
+      
+      // Check honeypot
+      const honeypot = contactForm.querySelector('input[name="_gotcha"]');
+      if (honeypot.value) {
+        return; // Bot detected
+      }
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      btnText.innerHTML = '<span class="spinner"></span>Sending...';
+      
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          showMessage('Thank you! Your message has been sent successfully.', 'success');
+          contactForm.reset();
+          
+          //Save Timestamp Presistently 
+          localStorage.setItem(STORAGE_KEY, currentTime.toString()); 
+        } else {
+          const errorData = await response.json().catch(() => ({})); 
+          throw new Error(errorData.error || 'Failed to send message');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error); 
+        showMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+      } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.textContent = 'Send Message';
+      }
+    });
+    
+    function showMessage(text, type) {
+      formMessage.textContent = text;
+      formMessage.className = `form-message ${type}`;
+      formMessage.style.display = 'block';
+      formMessage.setAttribute('aria-label', `${type} message: ${text}`); 
+      
+      setTimeout(() => {
+        formMessage.style.display = 'none';
+      }, 5000);
+    }
+     
+  // Function to close mobile menu (defined globally)
+  function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger');
+    mobileMenu.classList.remove('active');
+    hamburger.classList.remove('active'); 
+  }
+  
+  // Smooth scrolling function
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  }
+</script>     
+</body>
+</html> 
